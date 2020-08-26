@@ -93,10 +93,19 @@ You can use **Composer** or simply **Download the Release**
 #### Composer
 The preferred method is via [composer](https://getcomposer.org).
 
-Add the following lines to your composer.json:
+Add something like this to your composer.json:
 
-```sh
-  composer require convertio/convertio-php
+```json
+{
+	"repositories" : [{
+			"type" : "vcs",
+			"url" : "https://github.com/kees-brandenburg/convertio-php"
+		}
+	],
+	"require" : {
+		"convertio/convertio-php": "dev-add-conversion-minutes as v0.4"
+	}
+}
 ```
 
 Finally, be sure to include the autoloader:
