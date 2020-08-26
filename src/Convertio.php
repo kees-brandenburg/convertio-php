@@ -182,8 +182,11 @@ class Convertio
             $this->error_message = $this->data['error'];
         } else {
             $this->convert_id = $this->data['data']['id'];
-            $this->minutes    = (int) $this->data['data']['minutes'];
+
             $this->step = 'convert';
+
+            if (isset($this->data['data']['minutes']))
+              $this->minutes = (int) $this->data['data']['minutes'];
         }
         return $this;
     }
