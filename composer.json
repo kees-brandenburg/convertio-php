@@ -1,5 +1,5 @@
 {
-  "name": "kees-brandenburg/convertio-php",
+  "name": "convertio/convertio-php",
   "description": "PHP Wrapper for Convertio API, based on the official wrapper - https://github.com/Convertio/convertio-php",
   "homepage": "https://github.com/kees-brandenburg/convertio-php",
   "keywords": [

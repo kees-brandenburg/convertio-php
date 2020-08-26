@@ -2,9 +2,8 @@ Convertio APIs Client Library for PHP
 =======================
 
 This is a lightweight wrapper for the [Convertio](https://convertio.co/api/) API.
-It's based on the [official wrapper](https://github.com/Convertio/convertio-php/)
 
-Feel free to use, improve or modify this wrapper! If you have questions contact us or open an issue on GitHub.
+It's based on the [official wrapper](https://github.com/Convertio/convertio-php/)
 
 Requirements
 -------------------
@@ -92,11 +91,9 @@ Installation
 You can use **Composer** or simply **Download the Release**
 
 #### Composer
-The preferred method is via [composer](https://getcomposer.org). Follow the
-[installation instructions](https://getcomposer.org/doc/00-intro.md) if you do not already have
-composer installed.
+The preferred method is via [composer](https://getcomposer.org).
 
-Once composer is installed, execute the following command in your project root to install this library:
+Add the following lines to your composer.json:
 
 ```sh
   composer require convertio/convertio-php
@@ -110,7 +107,7 @@ Finally, be sure to include the autoloader:
 ```
 
 #### Download the Release
-You can download the package in its entirety. The [Releases](https://github.com/convertio/convertio-php/releases) page lists all stable versions.
+You can download the package in its entirety. The [Releases](https://github.com/kees-brandenburg/convertio-php/releases) page lists all stable versions.
 Download any file with the name `convertio-php-[RELEASE_NAME].zip` for a package including this library and its dependencies.
 Uncompress the zip file you download, and include the autoloader in your project:
 
@@ -265,3 +262,4 @@ Resources
 
 * [API Documentation](https://convertio.co/api/docs/)
 * [Conversion Types](https://convertio.co/formats)
+* [Official Convertio wrapper](https://github.com/Convertio/convertio-php)
