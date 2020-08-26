@@ -1,7 +1,7 @@
 {
-  "name": "convertio/convertio-php",
-  "description": "Official PHP Wrapper for Convertio API",
-  "homepage": "https://github.com/convertio/convertio-php",
+  "name": "kees-brandenburg/convertio-php",
+  "description": "PHP Wrapper for Convertio API, based on the official wrapper - https://github.com/Convertio/convertio-php",
+  "homepage": "https://github.com/kees-brandenburg/convertio-php",
   "keywords": [
     "convertio",
     "api",
@@ -13,16 +13,10 @@
   "type": "library",
   "authors": [
     {
-      "name": "Convertio Team",
-      "email": "support@convertio.co",
-      "homepage": "https://convertio.co/api/"
+      "name": "Kees Brandenburg",
+      "homepage": "https://psyfactory.nl"
     }
   ],
-  "support": {
-      "name": "Convertio Team",
-      "email": "support@convertio.co",
-      "docs": "https://convertio.co/api/docs/"
-  },
   "require": {
     "php": ">=5.3",
     "ext-curl": "*",

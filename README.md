@@ -2,6 +2,7 @@ Convertio APIs Client Library for PHP
 =======================
 
 This is a lightweight wrapper for the [Convertio](https://convertio.co/api/) API.
+It's based on the [official wrapper](https://github.com/Convertio/convertio-php/)
 
 Feel free to use, improve or modify this wrapper! If you have questions contact us or open an issue on GitHub.
 
@@ -74,7 +75,7 @@ Following example will convert pages 1-3,5,7 of PDF into editable DOCX, using OC
   $API = new Convertio("_YOUR_API_KEY_");
   $API->start('./test.pdf', 'docx',                 // Convert PDF (which contain scanned pages) into editable DOCX
     [                                               // Setting Conversion Options (Docs: https://convertio.co/api/docs/#options)
-      'ocr_enabled' => true,                        // Enabling OCR 
+      'ocr_enabled' => true,                        // Enabling OCR
       'ocr_settings' => [                           // Defining OCR Settings
         'langs' => ['eng','spa'],                   // OCR language list (Full list: https://convertio.co/api/docs/#ocr_langs)
         'page_nums' => '1-3,5,7'                    // Page numbers to process (optional)
@@ -147,7 +148,7 @@ The following example shows how to catch the different exception types which can
 
 Example of conversion process with callback URL
 -------------------
-The following example is usable for conversions that is not instant and may require some time to complete. 
+The following example is usable for conversions that is not instant and may require some time to complete.
 In this case you may define the callback URL (<a href="https://convertio.co/api/docs/#options_callback">More info</a>), which gets notified when the conversion is over (either successful or not):
 
 ##### Start conversion:
@@ -163,7 +164,7 @@ In this case you may define the callback URL (<a href="https://convertio.co/api/
       $API = new Convertio("_YOUR_API_KEY_");               // You can obtain API Key here: https://convertio.co/api/
       $API->start('./test.avi', 'hevc', [                   // Start AVI => HEVC conversion
           "callback_url" => "https://path/to/callback.php"  // Defined publicly available callback URL
-      ]); 
+      ]);
   } catch (APIException $e) {
       echo "API Exception: " . $e->getMessage() . " [Code: ".$e->getCode()."]" . "\n";
   } catch (CURLException $e) {
@@ -173,7 +174,7 @@ In this case you may define the callback URL (<a href="https://convertio.co/api/
   }
 ```
 ##### Callback handler example:
-The exception handling in this code snippet is essential. Conversion errors throw APIException which have to be handled properly. Please, read <a href="https://convertio.co/api/docs/#options_callback">more info about step parameter</a>.  
+The exception handling in this code snippet is essential. Conversion errors throw APIException which have to be handled properly. Please, read <a href="https://convertio.co/api/docs/#options_callback">more info about step parameter</a>.
 ```php
 <?php
   require_once 'autoload.php';                       // Comment this line if you use Composer to install the package
@@ -190,7 +191,7 @@ The exception handling in this code snippet is essential. Conversion errors thro
               ->delete();                            // Delete it from conversion server
       } else {                                       // Otherwise handle error in appropriate way
           echo "Conversion failed." . "\n";
-      }       
+      }
   } catch (APIException $e) {
       echo "API Exception: " . $e->getMessage() . " [Code: ".$e->getCode()."]" . "\n";
   } catch (CURLException $e) {
@@ -203,7 +204,7 @@ The exception handling in this code snippet is essential. Conversion errors thro
 
 Example of conversion process being split on steps
 -------------------
-The following example is usable for conversions that is not instant and may require some time to complete. 
+The following example is usable for conversions that is not instant and may require some time to complete.
 In this case you may get the conversion ID and check the conversion status later, omitting "->wait()" call and making conversion starting process instant:
 
 ##### Start conversion:
@@ -229,7 +230,7 @@ In this case you may get the conversion ID and check the conversion status later
   }
 ```
 ##### Check conversion status and download the result:
-The exception handling in this code snippet is essential. Conversion errors throw APIException which have to be handled properly.  
+The exception handling in this code snippet is essential. Conversion errors throw APIException which have to be handled properly.
 ```php
 <?php
   require_once 'autoload.php';                           // Comment this line if you use Composer to install the package

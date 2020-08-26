@@ -32,6 +32,12 @@ class Convertio
     private $data;
 
     /**
+     * Contain API conversion minutes available on the balance. More info: https://convertio.co/api/docs/
+     * @var integer
+     */
+    public $minutes;
+
+    /**
      * Contain current step of the process (upload,wait,convert,finish,error). More info: https://convertio.co/api/docs/
      * @var string
      */
@@ -176,6 +182,7 @@ class Convertio
             $this->error_message = $this->data['error'];
         } else {
             $this->convert_id = $this->data['data']['id'];
+            $this->minutes    = (int) $this->data['data']['minutes'];
             $this->step = 'convert';
         }
         return $this;
@@ -350,6 +357,9 @@ class Convertio
             if ($this->step == 'finish') {
                 $this->result_public_url = $data['data']['output']['url'];
                 $this->result_size = $data['data']['output']['size'];
+
+                if (!is_null($this->minutes) && isset($data['data']['minutes']))
+                    $this->minutes -= (int) $data['data']['minutes'];
             }
         }
 
